@@ -1,3 +1,84 @@
+# Biblioteca Wallmapu De Mesana Angular 20
+
+### Dependencies
+- [DaisyUI](https://daisyui.com/)
+
+### Structure
+```
+biblioteca-wallmapu-de-medusa-angular/
+├── src/
+│   ├── app/
+│   │   ├── core/                   ← Servicios globales y únicos
+│   │   │   ├── services/
+│   │   │   │   └── auth.service.ts ← Único, global, usado por guards/interceptors
+│   │   │   ├── guards/
+│   │   │   │   └── auth.guard.ts
+│   │   │   └── interceptors/
+│   │   │       └── auth.interceptor.ts
+│   │   │
+│   │   ├── shared/                 ← Componentes y servicios reutilizables
+│   │   │   ├── components/
+│   │   │   │   ├── navbar/
+│   │   │   │   └── sidebar/
+│   │   │   ├── directives/
+│   │   │   └── services/
+│   │   │       ├── book.service.ts ← Reutilizable en múltiples features
+│   │   │       └── user.service.ts ← Reutilizable en múltiples features
+│   │   │
+│   │   ├── features/               ← Módulos de funcionalidad
+│   │   │   ├── home/
+│   │   │   │   ├── home.component.ts
+│   │   │   │   ├── home.component.html
+│   │   │   │   └── home.component.css
+│   │   │   │
+│   │   │   ├── login/
+│   │   │   │   ├── login.component.ts  ← Usa AuthService del core/
+│   │   │   │   ├── login.component.html
+│   │   │   │   └── login.component.css
+│   │   │   │
+│   │   │   └── admin/                  ← Protegido por AuthGuard
+│   │   │       ├── dashboard/
+│   │   │       │   ├── dashboard.component.ts
+│   │   │       │   ├── dashboard.component.html
+│   │   │       │   └── dashboard.component.css
+│   │   │       │
+│   │   │       ├── libros/             ← Usa BookService del shared/
+│   │   │       │   ├── libros-management.component.ts
+│   │   │       │   ├── libros-management.component.html
+│   │   │       │   └── libros-management.component.css
+│   │   │       │
+│   │   │       └── usuarios/           ← Usa UserService del shared/
+│   │   │           ├── usuarios-management.component.ts
+│   │   │           ├── usuarios-management.component.html
+│   │   │           └── usuarios-management.component.css
+│   │   │
+│   │   ├── app.routes.ts
+│   │   └── app.component.ts
+│   │
+│   └── main.ts
+│
+├── angular.json
+├── package.json
+└── README.md
+```
+
+```sh
+ng g c features/home
+ng g c features/home/components/hero
+
+ng g c features/login
+ng g c features/dashboard
+ng g c features/not-found/
+
+ng g c shared/components/navbar
+ng g c shared/components/footer
+```
+
+
+---
+---
+---
+
 # BibliotecaWallmapuDeMesanaAngular
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.8.

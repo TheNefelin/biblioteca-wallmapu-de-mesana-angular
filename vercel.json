@@ -1,0 +1,11 @@
+{
+  "buildCommand": "ng build",
+  "outputDirectory": "dist/biblioteca-wallmapu-de-mesana-angular",
+  "framework": "angular",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
