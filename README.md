@@ -26,31 +26,30 @@ biblioteca-wallmapu-de-medusa-angular/
 │   │   │       └── user.service.ts ← Reutilizable en múltiples features
 │   │   │
 │   │   ├── features/               ← Módulos de funcionalidad
+│   │   │   ├── not-found/
+│   │   │   │   ├── not-found.component.ts
+│   │   │   │   └── not-found.component.html
+│   │   │   │
 │   │   │   ├── home/
 │   │   │   │   ├── home.component.ts
-│   │   │   │   ├── home.component.html
-│   │   │   │   └── home.component.css
+│   │   │   │   └── home.component.html
 │   │   │   │
 │   │   │   ├── login/
 │   │   │   │   ├── login.component.ts  ← Usa AuthService del core/
-│   │   │   │   ├── login.component.html
-│   │   │   │   └── login.component.css
+│   │   │   │   └── login.component.html
 │   │   │   │
 │   │   │   └── admin/                  ← Protegido por AuthGuard
 │   │   │       ├── dashboard/
 │   │   │       │   ├── dashboard.component.ts
-│   │   │       │   ├── dashboard.component.html
-│   │   │       │   └── dashboard.component.css
+│   │   │       │   └── dashboard.component.html
 │   │   │       │
 │   │   │       ├── libros/             ← Usa BookService del shared/
 │   │   │       │   ├── libros-management.component.ts
-│   │   │       │   ├── libros-management.component.html
-│   │   │       │   └── libros-management.component.css
+│   │   │       │   └── libros-management.component.html
 │   │   │       │
 │   │   │       └── usuarios/           ← Usa UserService del shared/
 │   │   │           ├── usuarios-management.component.ts
-│   │   │           ├── usuarios-management.component.html
-│   │   │           └── usuarios-management.component.css
+│   │   │           └── usuarios-management.component.html
 │   │   │
 │   │   ├── app.routes.ts
 │   │   └── app.component.ts
@@ -63,15 +62,26 @@ biblioteca-wallmapu-de-medusa-angular/
 ```
 
 ```sh
+ng g c shared/components/navbar
+ng g c shared/components/footer
+ng g c shared/components/login-form
+ng g c shared/components/register-form
+
+ng g c layouts/page-layout
+ng g c layouts/admin-layout
+
 ng g c features/home
 ng g c features/home/components/hero
 
-ng g c features/login
+
+
+
+ng g c features/auth
+ng g c features/auth/components/login
+ng g c features/auth/components/register
+
 ng g c features/dashboard
 ng g c features/not-found/
-
-ng g c shared/components/navbar
-ng g c shared/components/footer
 ```
 
 

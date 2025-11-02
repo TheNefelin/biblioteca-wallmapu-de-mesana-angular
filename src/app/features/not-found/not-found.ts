@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   imports: [],
   templateUrl: './not-found.html',
 })
-export class NotFound {
+export class NotFoundComponent {
   private router = inject(Router);
 
   goHome() {
