@@ -10,6 +10,6 @@ import { RegisterFormComponent } from '../../../../shared/components/register-fo
   ],
   templateUrl: './hero.html',
 })
-export class Hero {
+export class HeroComponent {
 
 }

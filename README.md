@@ -18,6 +18,8 @@ biblioteca-wallmapu-de-medusa-angular/
 │   │   │
 │   │   ├── shared/                 ← Componentes y servicios reutilizables
 │   │   │   ├── components/
+│   │   │   │   ├── login-form/
+│   │   │   │   ├── register-form/
 │   │   │   │   ├── navbar/
 │   │   │   │   └── sidebar/
 │   │   │   ├── directives/
@@ -72,8 +74,8 @@ ng g c layouts/admin-layout
 
 ng g c features/home
 ng g c features/home/components/hero
-
-
+ng g c features/home/components/some-books
+ng g i features/home/models/book
 
 
 ng g c features/auth
