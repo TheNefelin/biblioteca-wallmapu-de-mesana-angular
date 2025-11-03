@@ -8,60 +8,58 @@
 biblioteca-wallmapu-de-medusa-angular/
 ├── src/
 │   ├── app/
-│   │   ├── core/                   ← Servicios globales y únicos
+│   │   ├── core/
 │   │   │   ├── services/
-│   │   │   │   └── auth.service.ts ← Único, global, usado por guards/interceptors
+│   │   │   │   └── auth.service.ts ← pendiente
 │   │   │   ├── guards/
-│   │   │   │   └── auth.guard.ts
+│   │   │   │   └── auth.guard.ts ← pendiente
 │   │   │   └── interceptors/
-│   │   │       └── auth.interceptor.ts
+│   │   │       └── auth.interceptor.ts ← pendiente
 │   │   │
-│   │   ├── shared/                 ← Componentes y servicios reutilizables
-│   │   │   ├── components/
-│   │   │   │   ├── login-form/
-│   │   │   │   ├── register-form/
-│   │   │   │   ├── navbar/
-│   │   │   │   └── sidebar/
-│   │   │   ├── directives/
-│   │   │   └── services/
-│   │   │       ├── book.service.ts ← Reutilizable en múltiples features
-│   │   │       └── user.service.ts ← Reutilizable en múltiples features
-│   │   │
-│   │   ├── layouts/
-│   │   │   ├── user-layout/
-│   │   │   │   ├── user-layout.component.ts
-│   │   │   │   └── user-layout.component.html ← (contiene navbar + footer + router-outlet)
-│   │   │   │
-│   │   │   └── admin-layout/
-│   │   │       ├── admin-layout.component.ts
-│   │   │       └── admin-layout.component.html
-│   │   │
-│   │   ├── features/               ← Módulos de funcionalidad
-│   │   │   ├── not-found/
-│   │   │   │   ├── not-found.component.ts
-│   │   │   │   └── not-found.component.html
-│   │   │   │
+│   │   ├── features/
 │   │   │   ├── home/
 │   │   │   │   ├── components/
 │   │   │   │   │   ├── hero/
+│   │   │   │   │   │   ├── hero.ts
+│   │   │   │   │   │   └── hero.html
 │   │   │   │   │   └── some-books/
-│   │   │   │   ├── models/
-│   │   │   │   ├── services/
-│   │   │   │   ├── home.component.ts
-│   │   │   │   └── home.component.html
-│   │   │   │
-│   │   │   └── admin/                  ← Protegido por AuthGuard
-│   │   │       ├── dashboard/
-│   │   │       │   ├── dashboard.component.ts
-│   │   │       │   └── dashboard.component.html
-│   │   │       │
-│   │   │       ├── libros/             ← Usa BookService del shared/
-│   │   │       │   ├── libros-management.component.ts
-│   │   │       │   └── libros-management.component.html
-│   │   │       │
-│   │   │       └── usuarios/           ← Usa UserService del shared/
-│   │   │           ├── usuarios-management.component.ts
-│   │   │           └── usuarios-management.component.html
+│   │   │   │   │       ├── some-books.ts
+│   │   │   │   │       └── some-books.html
+│   │   │   │   ├── home.ts
+│   │   │   │   └── home.html
+│   │   │   └── not-found/
+│   │   │       ├── not-found.ts
+│   │   │       └── not-found.html
+│   │   │
+│   │   ├── layouts/
+│   │   │   ├── admin-layout/
+│   │   │   │   ├── admin-layout.ts
+│   │   │   │   └── admin-layout.html
+│   │   │   └── user-layout/
+│   │   │       ├── user-layout.ts
+│   │   │       └── user-layout.html
+│   │   │
+│   │   ├── shared/
+│   │   │   ├── components/
+│   │   │   │   ├── book-card/
+│   │   │   │   │   ├── book-card.html
+│   │   │   │   │   └── book-card.ts
+│   │   │   │   ├── footer/
+│   │   │   │   │   ├── footer.html
+│   │   │   │   │   └── footer.ts
+│   │   │   │   ├── login-form/
+│   │   │   │   │   ├── login-form.html
+│   │   │   │   │   └── login-form.ts
+│   │   │   │   ├── navbar/
+│   │   │   │   │   ├── navbar.html
+│   │   │   │   │   └── navbar.ts
+│   │   │   │   └── register-form/
+│   │   │   │       ├── register-form.html
+│   │   │   │       └── register-form.ts
+│   │   │   ├── models/
+│   │   │   │   └── book.ts
+│   │   │   └── services/
+│   │   │       └── book.service.ts
 │   │   │
 │   │   ├── app.routes.ts
 │   │   └── app.component.ts
@@ -78,6 +76,7 @@ ng g c shared/components/navbar
 ng g c shared/components/footer
 ng g c shared/components/login-form
 ng g c shared/components/register-form
+ng g c shared/components/book-card
 ng g s shared/services/BookService
 ng g i shared/models/book
 

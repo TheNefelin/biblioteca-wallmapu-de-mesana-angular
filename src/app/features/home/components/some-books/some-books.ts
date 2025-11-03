@@ -1,17 +1,18 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { BookService } from '../../../../shared/services/book-service';
 import { Book } from '../../../../shared/models/book';
-import { AsyncPipe, JsonPipe } from '@angular/common';
-import { Observable } from 'rxjs';
+import { BookCardComponent } from '../../../../shared/components/book-card/book-card';
+// import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-some-books',
   imports: [
     // JsonPipe,
+    BookCardComponent,
   ],
   templateUrl: './some-books.html',
 })
-export class SomeBooksComponent {
+export class SomeBooksComponent implements OnInit {
   private bookService = inject(BookService);
   books = signal<Book[]>([]);
 
