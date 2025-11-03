@@ -27,18 +27,28 @@ biblioteca-wallmapu-de-medusa-angular/
 │   │   │       ├── book.service.ts ← Reutilizable en múltiples features
 │   │   │       └── user.service.ts ← Reutilizable en múltiples features
 │   │   │
+│   │   ├── layouts/
+│   │   │   ├── user-layout/
+│   │   │   │   ├── user-layout.component.ts
+│   │   │   │   └── user-layout.component.html ← (contiene navbar + footer + router-outlet)
+│   │   │   │
+│   │   │   └── admin-layout/
+│   │   │       ├── admin-layout.component.ts
+│   │   │       └── admin-layout.component.html
+│   │   │
 │   │   ├── features/               ← Módulos de funcionalidad
 │   │   │   ├── not-found/
 │   │   │   │   ├── not-found.component.ts
 │   │   │   │   └── not-found.component.html
 │   │   │   │
 │   │   │   ├── home/
+│   │   │   │   ├── components/
+│   │   │   │   │   ├── hero/
+│   │   │   │   │   └── some-books/
+│   │   │   │   ├── models/
+│   │   │   │   ├── services/
 │   │   │   │   ├── home.component.ts
 │   │   │   │   └── home.component.html
-│   │   │   │
-│   │   │   ├── login/
-│   │   │   │   ├── login.component.ts  ← Usa AuthService del core/
-│   │   │   │   └── login.component.html
 │   │   │   │
 │   │   │   └── admin/                  ← Protegido por AuthGuard
 │   │   │       ├── dashboard/
@@ -68,6 +78,8 @@ ng g c shared/components/navbar
 ng g c shared/components/footer
 ng g c shared/components/login-form
 ng g c shared/components/register-form
+ng g s shared/services/BookService
+ng g i shared/models/book
 
 ng g c layouts/page-layout
 ng g c layouts/admin-layout
@@ -75,7 +87,7 @@ ng g c layouts/admin-layout
 ng g c features/home
 ng g c features/home/components/hero
 ng g c features/home/components/some-books
-ng g i features/home/models/book
+
 
 
 ng g c features/auth
