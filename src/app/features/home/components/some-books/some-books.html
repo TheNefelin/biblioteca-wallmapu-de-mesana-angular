@@ -5,7 +5,7 @@
 <section class="flex p-4 justify-center">
 
   @if (books().length > 0) {
-  <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+  <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5 gap-8">
     @for (book of books(); track book.id) {
 
       <div class="w-56 bg-base-300 shadow-2xl cursor-pointer hover:scale-105 transition-transform mx-2">
