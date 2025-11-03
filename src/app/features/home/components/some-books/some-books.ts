@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-some-books',
   imports: [
-    JsonPipe,
+    // JsonPipe,
   ],
   templateUrl: './some-books.html',
 })
