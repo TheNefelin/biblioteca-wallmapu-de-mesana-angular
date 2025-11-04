@@ -1,0 +1,29 @@
+[
+  {
+    "id": "1",
+    "rut": "12345678",
+    "nombre": "Juan Pérez",
+    "password": "password123",
+    "email": "juan@email.com",
+    "fechaRegistro": "2025-01-15",
+    "activo": true
+  },
+  {
+    "id": "2",
+    "rut": "87654321",
+    "nombre": "María García",
+    "password": "password456",
+    "email": "maria@email.com",
+    "fechaRegistro": "2025-02-20",
+    "activo": true
+  },
+  {
+    "id": "3",
+    "rut": "11223344",
+    "nombre": "Carlos López",
+    "password": "password789",
+    "email": "carlos@email.com",
+    "fechaRegistro": "2025-03-10",
+    "activo": true
+  }
+]

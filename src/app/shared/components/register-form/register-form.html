@@ -1,17 +1,55 @@
 <fieldset class="fieldset bg-base-200 border-base-300 text-gray-800 rounded-box w-xs border p-4">
-  <legend class="fieldset-legend text-2xl">Inicia sesión</legend>
+  <legend class="fieldset-legend text-2xl">Regístrate</legend>
 
   <label class="label">Rut</label>
-  <input type="number" class="input" placeholder="Ingrese rut sin guion" />
+  <input 
+    type="text" 
+    class="input" 
+    placeholder="Ingrese rut sin guion"
+    [(ngModel)]="rut"
+    name="rut" />
 
-  <label class="label">Nombres</label>
-  <input type="number" class="input" placeholder="Ingrese nombre y apellido" />
+  <label class="label">Nombre y Apellido</label>
+  <input 
+    type="text" 
+    class="input" 
+    placeholder="Ingrese nombre y apellido"
+    [(ngModel)]="nombre"
+    name="nombre" />
+
+  <label class="label">Email</label>
+  <input 
+    type="email" 
+    class="input" 
+    placeholder="Ingrese email"
+    [(ngModel)]="email"
+    name="email" />
 
   <label class="label">Contraseña</label>
-  <input type="password" class="input" placeholder="Ingrese contraseña" />
+  <input 
+    type="password" 
+    class="input" 
+    placeholder="Ingrese contraseña"
+    [(ngModel)]="password"
+    name="password" />
 
   <label class="label">Verificar Contraseña</label>
-  <input type="password" class="input" placeholder="Ingrese contraseña" />
+  <input 
+    type="password" 
+    class="input" 
+    placeholder="Ingrese contraseña de nuevo"
+    [(ngModel)]="confirmPassword"
+    name="confirmPassword" />
 
-  <button class="btn btn-neutral mt-4">Registrarse</button>
+  @if (errorMessage()) {
+    <div class="alert alert-error mt-3">
+      <p>{{ errorMessage() }}</p>
+    </div>
+  }
+
+  @if (loading()) {
+    <button class="btn btn-neutral mt-4 loading" disabled>Cargando...</button>
+  } @else {
+    <button class="btn btn-neutral mt-4" (click)="onRegister()">Regístrate</button>
+  }
 </fieldset>

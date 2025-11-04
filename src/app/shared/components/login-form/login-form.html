@@ -2,10 +2,30 @@
   <legend class="fieldset-legend text-2xl">Inicia sesión</legend>
 
   <label class="label">Rut</label>
-  <input type="number" class="input" placeholder="Ingrese rut sin guion" />
+  <input 
+    type="text" 
+    class="input" 
+    placeholder="Ingrese rut sin guion"
+    [(ngModel)]="rut"
+    name="rut" />
 
   <label class="label">Contraseña</label>
-  <input type="password" class="input" placeholder="Ingrese contraseña" />
+  <input 
+    type="password" 
+    class="input" 
+    placeholder="Ingrese contraseña"
+    [(ngModel)]="password"
+    name="password" />
 
-  <button class="btn btn-neutral mt-4">Inicia sesión</button>
+  @if (errorMessage()) {
+    <div class="alert alert-error mt-3">
+      <p>{{ errorMessage() }}</p>
+    </div>
+  }
+
+  @if (loading()) {
+    <button class="btn btn-neutral mt-4 loading" disabled>Cargando...</button>
+  } @else {
+    <button class="btn btn-neutral mt-4" (click)="onLogin()">Inicia sesión</button>
+  }
 </fieldset>

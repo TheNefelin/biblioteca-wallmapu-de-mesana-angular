@@ -77,8 +77,8 @@ ng g c shared/components/footer
 ng g c shared/components/login-form
 ng g c shared/components/register-form
 ng g c shared/components/book-card
-ng g s shared/services/BookService
 ng g i shared/models/book
+ng g s shared/services/book-service
 
 ng g c layouts/page-layout
 ng g c layouts/admin-layout
@@ -86,15 +86,12 @@ ng g c layouts/admin-layout
 ng g c features/home
 ng g c features/home/components/hero
 ng g c features/home/components/some-books
-
-
-
-ng g c features/auth
-ng g c features/auth/components/login
-ng g c features/auth/components/register
-
 ng g c features/dashboard
 ng g c features/not-found/
+
+ng g i core/models/user
+ng g i core/models/auth-response
+ng g s core/services/auth-service
 ```
 
 
