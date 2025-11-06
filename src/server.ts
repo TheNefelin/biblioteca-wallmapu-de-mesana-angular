@@ -62,6 +62,13 @@ if (isMainModule(import.meta.url) || process.env['pm_id']) {
   });
 }
 
+export function getPrerenderParams() {
+  return [
+    { route: '' },
+    { route: 'book-details/0' }
+  ];
+}
+
 /**
  * Request handler used by the Angular CLI (for dev-server and during build) or Firebase Cloud Functions.
  */
