@@ -7,4 +7,6 @@ export interface Book {
   isbn: string;
   coverImageUrl: string;
   stars: number;
+  category?: string;
+  editorial?: string;
 }

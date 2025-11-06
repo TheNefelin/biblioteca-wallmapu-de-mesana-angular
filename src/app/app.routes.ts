@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './features/home/home';
 import { NotFoundComponent } from './features/not-found/not-found';
 import { PageLayoutComponent } from './layouts/page-layout/page-layout';
+import { BookDetailComponent } from './features/book-detail/book-detail';
 
 export const routes: Routes = [
   {
@@ -9,6 +10,7 @@ export const routes: Routes = [
     component: PageLayoutComponent,
     children: [
       { path: '', component: HomeComponent },
+      { path: 'book-details/:id', component: BookDetailComponent },
     ]
   },
   {

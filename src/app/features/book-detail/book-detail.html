@@ -1,0 +1,49 @@
+<div class="min-h-screen bg-base-100 pt-20 px-4">
+  
+  @if (loading()) {
+    <div class="flex justify-center items-center min-h-screen">
+      <span class="loading loading-spinner loading-lg"></span>
+    </div>
+  } @else if (book()) {
+    
+    <div class="hero bg-base-200">
+      <div class="hero-content flex-col lg:flex-row gap-8 py-20">
+        
+        <!-- Portada del libro -->
+        <img
+          [src]="'/assets/img/' + book()!.coverImageUrl"
+          [alt]="book()!.title"
+          class="max-h-96 rounded-lg shadow-2xl"
+        />
+        
+        <!-- Información del libro -->
+        <div class="space-y-4">
+          <h1 class="text-5xl font-bold">{{ book()!.title }}</h1>
+          <p class="text-xl text-accent">{{ book()!.author }}</p>
+          
+          <div class="divider"></div>
+          
+          <p class="text-lg">{{ book()!.description }}</p>
+          
+          <div class="space-y-2">
+            <p><strong>ISBN:</strong> {{ book()!.isbn }}</p>
+            <p><strong>Fecha de publicación:</strong> {{ book()!.publishedDate | date: 'dd/MM/yyyy' }}</p>
+            <p><strong>Calificación:</strong> ⭐ {{ book()!.stars }}/5</p>
+          </div>
+          
+          <div class="flex gap-4 pt-4">
+            <button class="btn btn-primary">Solicitar Préstamo</button>
+            <button class="btn btn-outline" onclick="window.history.back()">Volver</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  } @else {
+    <div class="text-center py-20">
+      <p class="text-lg text-error">Libro no encontrado</p>
+      <button class="btn btn-primary mt-4" onclick="window.history.back()">Volver</button>
+    </div>
+  }
+  
+</div>
